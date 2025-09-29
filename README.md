@@ -1,22 +1,20 @@
-# Welcome to your Lovable project
+# Welcome to your HireConnect project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/a83e498b-70f2-416d-9c7a-d6aae9143da5
+**URL**: [Project Home](https://vercel.com/)
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use Vercel**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a83e498b-70f2-416d-9c7a-d6aae9143da5) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+You can deploy this project easily on [Vercel](https://vercel.com/).
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will be reflected in your deployment platform.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +60,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/a83e498b-70f2-416d-9c7a-d6aae9143da5) and click on Share -> Publish.
+Push your code to GitHub, GitLab, or Bitbucket, then import your repo into Vercel and deploy. See Vercel docs for details.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my deployed project?
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+To connect a domain, use the Vercel dashboard and follow the instructions for custom domains.
