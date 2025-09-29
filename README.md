@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: [Project Home]((https://hireconnect-eight.vercel.app/)
+**URL**: [Project Home](https://hireconnect-eight.vercel.app/)
 
 ## How can I edit this code?
 
