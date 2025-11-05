@@ -16,9 +16,11 @@ import {
   Users,
   ChevronRight
 } from "lucide-react";
+import { useAppliedJobs } from "@/contexts/AppliedJobsContext";
 
 export const JobsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { appliedJobs, apply, isApplied } = useAppliedJobs();
   
   const jobs = [
     {
@@ -103,6 +105,10 @@ export const JobsPage = () => {
     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
     job.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))
   );
+
+  const handleApply = (jobId: number) => {
+    if (!isApplied(jobId)) apply(jobId);
+  };
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -247,9 +253,19 @@ export const JobsPage = () => {
 
               <div className="flex items-center justify-between">
                 <div className="flex gap-2">
-                  <Button variant="hero" size="sm">
-                    Apply Now
-                  </Button>
+                  {(() => {
+                    const applied = isApplied(job.id);
+                    return (
+                      <Button
+                        variant={applied ? "outline" : "hero"}
+                        size="sm"
+                        disabled={applied}
+                        onClick={() => handleApply(job.id)}
+                      >
+                        {applied ? "Applied" : "Apply Now"}
+                      </Button>
+                    );
+                  })()}
                   <Button variant="outline" size="sm">
                     Save Job
                   </Button>

@@ -16,6 +16,7 @@ import {
   Activity,
   BarChart3
 } from "lucide-react";
+import { useAppliedJobs } from "@/contexts/AppliedJobsContext";
 
 export const Dashboard = () => {
   const matchingJobs = [
@@ -57,6 +58,8 @@ export const Dashboard = () => {
     { label: "Applications", value: "12", trend: "+15%", icon: Briefcase },
     { label: "Interviews", value: "3", trend: "+50%", icon: Star }
   ];
+
+  const { isApplied, apply } = useAppliedJobs();
 
   return (
     <div className="space-y-6 animate-fade-in">
@@ -170,7 +173,19 @@ export const Dashboard = () => {
                   <Progress value={job.match} className="mb-3" />
                   
                   <div className="flex gap-2">
-                    <Button size="sm" variant="hero">Apply Now</Button>
+                    {(() => {
+                      const applied = isApplied(job.id);
+                      return (
+                        <Button
+                          size="sm"
+                          variant={applied ? "outline" : "hero"}
+                          disabled={applied}
+                          onClick={() => apply(job.id)}
+                        >
+                          {applied ? "Applied" : "Apply Now"}
+                        </Button>
+                      );
+                    })()}
                     <Button size="sm" variant="outline">Learn More</Button>
                   </div>
                 </div>
